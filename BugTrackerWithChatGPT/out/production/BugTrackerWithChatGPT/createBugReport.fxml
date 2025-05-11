@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:controller="createBugReportController" stylesheets="@javaFX.css" styleClass="stack-pane" xmlns:fx="http://javafx.com/fxml">
+
+    <HBox fx:id="toolBar" styleClass="toolBar" spacing="20" StackPane.alignment="top_center" prefWidth="1440" maxWidth="1440" prefHeight="900" maxHeight="40">
+        <ImageView fx:id="projectIcon" preserveRatio="true" fitHeight="50" fitWidth="50">
+            <Image url="@assets/bug.jpg"/>
+        </ImageView>
+        <Label text="BugTracker" styleClass="projectName"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox spacing="15">
+            <Button fx:id="createBugButton" styleClass="logout-button" alignment="center_right"  text="Bug Dashboard" onAction="#switchScene2" />
+            <Button fx:id="logoutButton" styleClass="logout-button" alignment="center_right"  text="Logout" onAction="#switchScene" />
+        </HBox>
+    </HBox>
+
+
+
+
+    <Pane prefWidth="600" prefHeight="600">
+        <Rectangle styleClass="rectangle" x="300" y="100" width="800" height="600" />
+
+        <Text styleClass="signInText" x="350" y="150" text="Create Bug Report"/>
+
+        <Label text="Bug Title:" layoutX="500" layoutY="180" />
+
+        <TextField fx:id="bugTitle" layoutX="650" layoutY="180" prefWidth="200"/>
+
+        <Label text="Bug Description:" layoutX="500" layoutY="210"/>
+
+        <TextField fx:id="bugDescription" layoutX="650" layoutY="210" prefHeight="60" prefWidth="200"/>
+
+        <Label text="Bug Priority:" layoutX="500" layoutY="280"/>
+
+        <TextField fx:id="bugPriority" layoutX="650" layoutY="280" prefWidth="200"/>
+
+        <Label text="Bug Type:" layoutX="500" layoutY="310"/>
+
+        <TextField fx:id="bugType" layoutX="650" layoutY="310" prefWidth="200"/>
+
+        <Label text="Bug Status:" layoutX="500" layoutY="340"/>
+
+        <TextField fx:id="bugStatus" layoutX="650" layoutY="340" prefWidth="200"/>
+
+        <Label text="Bug Date:" layoutX="500" layoutY="370"/>
+
+        <TextField fx:id="bugDate" layoutX="650" layoutY="370" prefWidth="200"/>
+
+        <Label text="Bug Assigned To:" layoutX="500" layoutY="400"/>
+
+        <TextField fx:id="bugAssigned" layoutX="650" layoutY="400" prefWidth="200"/>
+
+        <Label text="Bug Reported To:" layoutX="500" layoutY="430"/>
+
+        <TextField fx:id="bugReported" layoutX="650" layoutY="430" prefWidth="200"/>
+
+        <Button fx:id="bugReportButton" styleClass="login-button" layoutX="625" layoutY="490" text="Log Bug Report" onAction="#createBugReport" />
+
+
+    </Pane>
+
+
+
+</VBox>

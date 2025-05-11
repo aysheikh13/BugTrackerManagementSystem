@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:controller="signUpController" stylesheets="@javaFX.css" styleClass="stack-pane" xmlns:fx="http://javafx.com/fxml">
+
+    <HBox fx:id="toolBar" styleClass="toolBar" spacing="20" StackPane.alignment="top_center" prefWidth="1440" maxWidth="1440" prefHeight="900" maxHeight="40">
+        <ImageView fx:id="projectIcon" preserveRatio="true" fitHeight="50" fitWidth="50">
+            <Image url="@assets/bug.jpg"/>
+        </ImageView>
+        <Label text="BugTracker" styleClass="projectName"/>
+    </HBox>
+
+
+    <Rectangle styleClass="rectangle" width="400" height="550"/>
+
+    <GridPane styleClass="grid-pane"  alignment="center" hgap="5" vgap="50">
+
+        <Text styleClass="signInText" text="Sign Up" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+
+        <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+        <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Last Name:"  GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+        <TextField fx:id="lastName"  GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Email:"  GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+        <TextField fx:id="email"  GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Password:"  GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+
+        <PasswordField fx:id="password"  GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Re-enter Password:"  GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+        <PasswordField fx:id="passwordVerify"  GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+        <Button fx:id="loginButton" styleClass="login-button" GridPane.columnIndex="1" GridPane.rowIndex="6" text="Sign Up" onAction="#callFunctions" />
+    </GridPane>
+
+</StackPane>

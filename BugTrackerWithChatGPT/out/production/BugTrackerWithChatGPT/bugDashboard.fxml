@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<VBox fx:controller="bugDashboardController" stylesheets="@javaFX.css" styleClass="stack-pane" xmlns:fx="http://javafx.com/fxml">
+
+    <HBox fx:id="toolBar" styleClass="toolBar" spacing="20" alignment="center_left" prefWidth="1440" maxWidth="1440" prefHeight="900" maxHeight="40">
+        <ImageView fx:id="projectIcon" preserveRatio="true" fitHeight="50" fitWidth="50">
+            <Image url="@assets/bug.jpg"/>
+        </ImageView>
+        <Label text="BugTracker" styleClass="projectName"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <HBox spacing="15">
+            <Button fx:id="createBugButton" styleClass="logout-button" alignment="center_right"  text="Create Bug Report" onAction="#switchScene2" />
+            <Button fx:id="logoutButton" styleClass="logout-button" alignment="center_right"  text="Logout" onAction="#switchScene" />
+        </HBox>
+    </HBox>
+
+    <Label text="Issues"  styleClass="dashboardTitle"/>
+
+    <HBox alignment="center" prefWidth="1000" prefHeight="700">
+
+        <TableView fx:id="bugsTable" styleClass="bugsTable"  prefHeight="700" prefWidth="1400">
+                <columns>
+                    <TableColumn fx:id="bugIDColumn" styleClass="bugsColumn"  text="BugID" prefWidth="100" resizable="True" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugID"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugTitleColumn" styleClass="bugsColumn"  text="BugTitle" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugTitle"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugDescriptionColumn" styleClass="bugsColumn"  text="BugDescription" prefWidth="200">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugDescription"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugPriorityColumn" styleClass="bugsColumn"  text="BugPriority" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugPriority"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugTypeColumn" styleClass="bugsColumn"  text="BugType" prefWidth="200">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugType"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugStatusColumn" styleClass="bugsColumn"  text="BugStatus" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugStatus"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugDateColumn" styleClass="bugsColumn"  text="BugDate" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugDate"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugAssignedToColumn" styleClass="bugsColumn"  text="BugAssignedTo" prefWidth="200">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugAssignedTo"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="bugReportedToColumn" styleClass="bugsColumn"  text="BugReportedTo" prefWidth="200">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="bugReportedTo"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="debugColumn" styleClass="bugsColumn"  text="ChatGPTDebugger" prefWidth="200" resizable="True">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="ChatGPTDebugger"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+        </TableView>
+    </HBox>
+
+
+</VBox>
